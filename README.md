@@ -6,6 +6,7 @@
 ## 1. Index Introduction （B+Tree, B Tree）
 
 - [MySQL索引背后的数据结构及算法原理](http://blog.codinglabs.org/articles/theory-of-mysql-index.html)
+- [B树和B+树](http://blog.codinglabs.org/articles/theory-of-mysql-index.html)
 
 # 操作系统：
 ## 1. 线程与进程
