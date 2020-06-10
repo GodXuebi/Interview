@@ -28,6 +28,15 @@
 ## 3. 虚继承 
 - 虚继承用于解决多继承条件下的菱形继承问题（浪费存储空间、存在二义性）。
 
+## 4. 智能指针 
+- [智能指针](https://blog.csdn.net/flowing_wind/article/details/81301001)
+- raw pointer 如果栈空间分配失败，会抛出bad_alloc异常，应该使用try_catch捕获异常，如果不想抛出异常，int* p = new (nothrow) int 
+- shared_ptr: 引用计数，使用直接初始化形式，或者使用make_shared<int>(new int)，赋值时候，例如 p=q，则左边的计数器--，右边的计数器++，方法
+  p.reset() | p.reset(q) | p = q.get(), p是raw指针, p.use_count()。
+- week_ptr: 解决多个类对象中shared_ptr循环引用造成的数据声明周期异常，导致对象内存不能由share_ptr正确释放的问题。方法有 q = p.lock() | p.expired() | shared_ptr<int> p = q.lock() week_ptr转换为shared_ptr | p.use_count()
+- unique_ptr: 采用独占式拥有对象, 禁止使用赋值拷贝函数和拷贝赋值函数，具有移动拷贝构造函数，能转移对象所属权。能在编译过程中解决auto_ptr的问题，而且能在容器中使用和能管理动态数组，能作为函数返回值（临时右值）。方法有 unique_ptr<int> p2(p1.release()) | p2.reset(p3.release()) p3设置为NULL；
+- auto_ptr: 与unique_ptr相类似，采用独占式拥有对象，但是并没有禁止赋值拷贝函数，考虑auto_ptr<int> atpr[5], 如果存在auto_ptr<int> tmp=atpr[2]; 则atpr[2]所指向的对象的归属前已经转移到tmp，运行过程中的访问*atpr[2]就会出错。
+
 # 数据库
 ## 1. 索引
 - 定义：数据库索引，是数据库管理系统中一个排序的数据结构，以协助快速查询、更新数据库表中数据。索引的实现通常使用B树及其变种B+树。）
