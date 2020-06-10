@@ -1,5 +1,26 @@
 # Interview
 面试复习资料汇总
+# 计算机网络：
+## 1. SSL (Secure Socket Layer)，TLS (Transport Layer Security)
+- [浅谈SSL/TLS工作原理](https://zhuanlan.zhihu.com/p/36981565)
+对称加密算法： AES, DES
+非对称加密算法：RSA
+哈希算法：SHA MD5
+保证public key的真实性：CA（Certificate Authority）
+A和B都各有一个public key和一个private key，这些key根据相应的算法已经生成好了。private key只保留在各自的本地，public key传给对方。A要给B发送网络数据，那么A先使用自己的private key（只有A知道）加密数据的hash值，之后再用B的public key加密数据。之后，A将加密的hash值和加密的数据再加一些其他的信息，发送给B。B收到了之后，先用自己的private key（只有B知道）解密数据，本地运算一个hash值，之后用A的public key解密hash值，对比两个hash值，以检验数据的完整性。
+
+SSL记录层协议(SSL Record Protocol)
+SSL握手协议(SSL Handshake Protocol)允许服务方和客户方互相认证
+
+具体过程
+1. 双方协商SSL版本，加密算法，压缩算法
+2. 双方交换数字证书(认证过的公钥)
+3. 双方协商DH算法，分别产生session-key,用于对双方SSL数据流加密和解密，加密算法AES，再产生哈希算法SHA, MD5
+4. 然后就是用哈希算法对数据报文进行加密，添加到原始报文后面，再用对称加密算法加密
+5. 发送
+
+作用：1. 验证双方身份 2. 加密数据 3. 保持数据完整性
+
 
 
 # 数据库：
