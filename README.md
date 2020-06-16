@@ -12,6 +12,8 @@ A和B都各有一个public key和一个private key，这些key根据相应的算
 SSL记录层协议(SSL Record Protocol)
 SSL握手协议(SSL Handshake Protocol)允许服务方和客户方互相认证
 
+## 2. 知识点总结
+
 具体过程
 1. 双方协商SSL版本，加密算法，压缩算法
 2. 双方交换数字证书(认证过的公钥)
