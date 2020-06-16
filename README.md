@@ -23,6 +23,12 @@ SSL握手协议(SSL Handshake Protocol)允许服务方和客户方互相认证
 
 作用：1. 验证双方身份 2. 加密数据 3. 保持数据完整性
 
+## 2. 多路复用
+1. I/O多路复用：单个线程，通过记录跟踪每个I/O流(sock)的状态，来同时管理多个I/O流。select, poll, epoll
+select: 轮询检查，频繁在内核和用户空间复制文件符，最大处理文件描述符是1024，不是线程安全。
+poll：轮询检查，频繁在内核和用户空间复制文件符，通过链表突破最大处理文件描述符是1024的限制，不是线程安全。
+epoll: 水平触发 LT 边缘触发ET，epoll_ctl(),epoll_wait() -- 返回触发的描述符
+
 
 # 数据库：
 ## 1. Index Introduction （B+Tree, B Tree）
@@ -34,6 +40,8 @@ SSL握手协议(SSL Handshake Protocol)允许服务方和客户方互相认证
 ## 1. 线程与进程
 
 - [多线程还是多进程的选择及区别](https://blog.csdn.net/lishenglong666/article/details/8557215)
+- [Linux进程和线程关系浅析 （转载）](https://www.cnblogs.com/wangfenphph2/p/10198687.html)
+- [转载_Linux进程与线程的区别](https://www.cnblogs.com/fah936861121/articles/8043187.html)
 
 # C++
 ## 1. 虚析构函数：
