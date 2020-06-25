@@ -120,6 +120,9 @@ epoll: 水平触发 LT 边缘触发ET，epoll_ctl(),epoll_wait() -- 返回触发
 
 制性最强的隔离级别，因为该级别锁定整个范围的键，并一直持有锁，直到事务完成。
 
+- [MyISAM和InnoDB的区别](https://www.cnblogs.com/zhangchaoyang/articles/4214237.html)
+- [mysql中innodb和myisam对比及索引原理区别](https://blog.csdn.net/qq_27607965/article/details/79925288)
+
 
 # 操作系统
 ## 1. 
