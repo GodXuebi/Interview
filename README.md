@@ -29,6 +29,10 @@ select: 轮询检查，频繁在内核和用户空间复制文件符，最大处
 poll：轮询检查，频繁在内核和用户空间复制文件符，通过链表突破最大处理文件描述符是1024的限制，不是线程安全。
 epoll: 水平触发 LT 边缘触发ET，epoll_ctl(),epoll_wait() -- 返回触发的描述符
 
+## 3. Get和Post区别
+- [Get和Post区别1](https://blog.csdn.net/qq_41175951/article/details/90441792)
+
+
 
 # 数据库：
 ## 1. Index Introduction （B+Tree, B Tree）
